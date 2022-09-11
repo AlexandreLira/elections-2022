@@ -45,7 +45,7 @@ export function PresidentCard({ data, translateY }: PresidentCardProps) {
                     <Title>Vice:</Title>
                     <Text>{vicePresident?.name}</Text>
                 </Info>
-
+                
             </Content>
         </Container>
     )

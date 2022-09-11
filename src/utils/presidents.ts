@@ -1,16 +1,17 @@
 export interface PresidentProps {
     id: string;
     name: string;
-    age?: string;
+    age: string;
     hometown?: string;
     image: string;
     number: number;
+    description: string;
     broken: {
         sortName?: string;
         fullName: string;
         image: string;
     };
-    vicePresident:{
+    vicePresident: {
         name: string;
         image: string;
     }
@@ -25,6 +26,7 @@ export const PRESIDENTS_DATA: PresidentProps[] = [
         image: 'https://static.wikia.nocookie.net/vvikipedia/images/7/7d/Foto-oficial-Bolsonaro.jpg/revision/latest?cb=20210410232940&path-prefix=pt',
         age: '67',
         number: 22,
+        description: 'Jair Bolsonaro é o candidato que hoje ocupa o cargo de presidência da república. O gestor está no líder do executivo desde 1º de janeiro de 2019. É militar reformado e entrou na política em 1988, quando se elegeu vereador. Posteriormente, ocupou o cargo de deputado federal pelo Rio de Janeiro, em 1988, cargo que ocupou até 2018.rr',
         broken: {
             sortName: 'PL',
             fullName: 'Partido Liberal',
@@ -42,6 +44,7 @@ export const PRESIDENTS_DATA: PresidentProps[] = [
         image: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Lula_-_foto_oficial_-_05_jan_2007.jpg',
         age: '75',
         number: 13,
+        description: 'Como bem se sabe, Lula já ocupou o Palácio do Planalto duas vezes, sendo eleito em 2022 e 2006. O candidato, atualmente, conta com o apoio de duas personalidades que optaram em retirar sua candidatura, sendo o Coach Pablo Marçal e o deputado federal André Janones. Atualmente, Lula é o líder nas pesquisas.',
         broken: {
             sortName: 'PT',
             fullName: 'Partido dos Trabalhadores',
@@ -57,6 +60,8 @@ export const PRESIDENTS_DATA: PresidentProps[] = [
         name: 'Simone Tebet',
         image: 'https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5527.jpg',
         number: 15,
+        age: '52',
+        description: 'Simone Tebet é formada em direito pela UFRJ e fez carreira como advogada e professora. O início do seu caminho na política se deu em 2003, quando a mesma foi eleita deputada estadual, além de ter sido prefeita de sua cidade natal por dois mandatos (2005-2010). Em seguida, deixou o cargo para ser vice-governadora do Mato Grosso do Sul. No ano de 2015, a atual candidata à presidência, foi empossada como senadora.',
         broken: {
             sortName: 'MDB',
             fullName: 'Movimento Democrático Brasileiro',
@@ -72,6 +77,8 @@ export const PRESIDENTS_DATA: PresidentProps[] = [
         name: 'Leonardo Péricles',
         image: 'http://oestadoce.com.br/wp-content/uploads/2022/08/WhatsApp-Image-2022-08-31-at-11.00.07.jpeg',
         number: 80,
+        age: '40',
+        description: 'Nestas eleições de 2022, Léo Péricles é o único canditado homem e negro, concorrendo à vaga de presidente da república. Dentre suas atividades notáveis,  o mesmo foi eleito diretor da UNE, visto que o candidato no início de carreira política se aproximou do movimento estudantil. Em seguida, passou a integrar o Movimento de Luta nos Bairros, Vilas e Favelas (MLB). Péricles, atualmente, é técnico em eletrônica e mecânico de manutenção de máquinas.',
         broken: {
             sortName: 'UP',
             fullName: 'Unidade Popular',
@@ -87,6 +94,8 @@ export const PRESIDENTS_DATA: PresidentProps[] = [
         name: 'Soraya Thronicke',
         image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Senadora_Soraya_Thronicke.jpg/800px-Senadora_Soraya_Thronicke.jpg',
         number: 44,
+        age: '49',
+        description: 'Soraya, atualmente, preside a União Brasil Mulher Nacional e o diretório do partido em Mato Grosso do Sul, além de ocupar o cargo de senadora. É graduada em direito com especializações, nas seguintes áreas: empresarial, tributário e Família e Sucessões. Disputou suas primeiras eleições em 2018, quando foi eleita para o Senado Federal. ',
         broken: {
             sortName: 'UB',
             fullName: 'União Brasil',
@@ -102,6 +111,8 @@ export const PRESIDENTS_DATA: PresidentProps[] = [
         name: 'Luiz Felipe dAvila',
         image: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Luiz-felipe-davila_retrato_%28cropped%29.jpg',
         number: 30,
+        age: '58',
+        description: 'Felipe D’Avila é um cientista político e escritor, autor de dez títulos já publicados. Em sua trajetória, já atuou como comentarista político, e diretor executivo (CEO) da Fundação Estudar. O candidato defende uma agenda liberal, e a primeira vez que concorre ao cargo de presidente da república.',
         broken: {
             fullName: 'Novo',
             image: 'https://i.pinimg.com/736x/5d/76/14/5d76140a9d20b05ae90512890fb0d43a.jpg',
@@ -116,6 +127,8 @@ export const PRESIDENTS_DATA: PresidentProps[] = [
         name: 'Ciro Gomes',
         image: 'https://veja.abril.com.br/wp-content/uploads/2022/04/CIRO-GOMES-NOVA-ROUPAGEM.jpeg2_.jpg?quality=70&strip=info',
         number: 12,
+        age: '62',
+        description: 'Ciro possui uma longa trajetória política,  em especial como gestor, já tendo sido prefeito de Fortaleza, governador do Ceará, Ministério da Fazenda, no governo Itamar Franco, ministro da Integração Nacional de 2003 a 2006. Além disso, o candidato já ocupou os cargos de deputado estadual e federal. Em 2022, será a quarta vez em que Ciro concorrerá ao cargo de presidente da república.',
         broken: {
             sortName: 'PDT',
             fullName: 'Partido Democrático Trabalhista',
@@ -131,6 +144,8 @@ export const PRESIDENTS_DATA: PresidentProps[] = [
         name: 'Sofia Manzano',
         image: 'https://midia.gruposinos.com.br/_midias/jpg/2022/07/31/sofia_manzano_pcb-20453135.jpg',
         number: 21,
+        age: '51',
+        description: 'Sofia Manzano é a representante escolhida pelo Partido Comunista Brasileiros (PCB). A candidata é formada em ciências econômicas pela  PUC de São Paulo, mestra em desenvolvimento econômico e doutora em história econômica pela USP. Além disso, ela também assume o cargo de professora na Universidade Estadual do Sudoeste da Bahia, além de ser pesquisadora de temas como a desigualdade social no capitalismo.',
         broken: {
             sortName: 'PCB',
             fullName: 'Partido Comunista Brasileiro',
@@ -146,6 +161,8 @@ export const PRESIDENTS_DATA: PresidentProps[] = [
         name: 'José Maria Eymael',
         image: 'https://veja.abril.com.br/wp-content/uploads/2022/05/JOSE-MARIA-EYMAEL-2017-4452.jpg.jpg?quality=70&strip=info',
         number: 27,
+        age: '83',
+        description: 'Eymael já é um “velho conhecido” das eleições presidenciais, visto que este ano, o empresário concorre pela sexta vez ao cargo de líder do executivo. Ele é graduado em direito e filosofia pela PUCRS e também é advogado tributário. Em 1962, se filiou ao Partido Democrata Cristão (PDC), e já se elegeu duas vezes como deputado federal.',
         broken: {
             sortName: 'DC',
             fullName: 'Democracia Cristã',
@@ -161,6 +178,8 @@ export const PRESIDENTS_DATA: PresidentProps[] = [
         name: 'Vera Lúcia',
         image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Vera_L%C3%BAcia_no_Dia_Internacional_da_Mulher_Trabalhadora_2018_-_PSTU.jpg/400px-Vera_L%C3%BAcia_no_Dia_Internacional_da_Mulher_Trabalhadora_2018_-_PSTU.jpg?20180726182438',
         number: 16,
+        age: '54',
+        description: 'Vera é formada em ciências sociais UFS e já exerceu diversos ofícios laborais, como operária sapateira, garçonete e datilógrafa. Deu início a sua militância, ainda aos 19 anos, quando ingressou em uma fábrica de calçados. A candidata está no PSTU desde sua fundação, e já buscou se eleger como prefeita, governadora e deputada federal.',
         broken: {
             sortName: 'PSTU',
             fullName: 'Partido Socialista dos Trabalhadores Unificado',
@@ -177,6 +196,7 @@ export const PRESIDENTS_DATA: PresidentProps[] = [
         image: 'https://veja.abril.com.br/wp-content/uploads/2022/01/ROBERTO-JEFFERSON-ARMA-2021-022.jpg.jpg',
         number: 14,
         age: '69',
+        description: 'Desde 1983, Roberto Jefferson já emendou seis mandatos seguidos como deputado federal. O candidato virou um conhecido do público, ao denunciar o polêmico esquema de compra de votos do qual também participou. Posteriormente, foi condenado pelos crimes de lavagem de dinheiro e corrupção passiva. Até então, os recursos públicos para realização da campanha de Jefferson estão suspensos, e o TSE ainda avalia o registro de sua candidatura.',
         broken: {
             sortName: 'PTB',
             fullName: 'Partido Socialista dos Trabalhadores Unificado',

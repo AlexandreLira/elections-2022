@@ -1,6 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+    useCallback,
+    useEffect,
+    useRef,
+    useState
+} from "react";
+
 import { Animated } from 'react-native'
 import { useTheme } from 'styled-components'
+import { useNavigation } from '@react-navigation/native'
+
 import { Backdrop } from "../../components/Backdrop";
 import { Button } from "../../components/Button";
 import { PresidentCard } from "../../components/PresidentCard";
@@ -9,13 +17,21 @@ import { PRESIDENTS_DATA } from "../../utils/presidents";
 
 import { Container, EmptySpace, Footer, FooterContent, List } from "./styles";
 
+interface SeletedProps {
+    index: string
+}
+
+const seleted: SeletedProps = {
+    index: '1'
+}
+
 export function Home() {
 
     const [presidents, setPresidents] = useState<any>([])
-
     const scrollX = useRef(new Animated.Value(0)).current;
-    console.log(scrollX)
     const { sizes } = useTheme() 
+
+    const navigation = useNavigation()
 
     useEffect(() => {
         setPresidents([
@@ -24,6 +40,23 @@ export function Home() {
             { id: 'right-spacer' }
         ])
     }, [])
+
+    const viewabilityConfig = {
+        viewAreaCoveragePercentThreshold: 40, 
+        waitForInteraction: true
+    };
+
+
+    const onViewableItemsChanged = useCallback(({ viewableItems }: any) => {
+        let id = viewableItems[0].item.id
+        if(id === 'left-spacer') {
+            id = '1'
+        } else if (id === 'right-spacer') {
+            id = presidents.length - 2
+        }
+
+        seleted.index = String(id)
+    }, []);
 
     return (
         <Container>
@@ -34,6 +67,8 @@ export function Home() {
             <List
                 data={presidents}
                 keyExtractor={item => item.id}
+                onViewableItemsChanged={ onViewableItemsChanged }
+                viewabilityConfig={ viewabilityConfig }
                 bounces={false}
                 decelerationRate="fast"
                 snapToInterval={sizes.item_size}
@@ -70,6 +105,10 @@ export function Home() {
             <Footer>
                 <FooterContent>
                     <Button
+                    onPress={() => { 
+                        // @ts-ignore
+                        navigation.navigate('Details', {seletedId: seleted.index})
+                    }}
                         title="Ver canditado"
                     />
                 </FooterContent>

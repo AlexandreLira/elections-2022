@@ -13,6 +13,7 @@ import {
 
 import * as SplashScreen from 'expo-splash-screen';
 import { View } from 'react-native';
+import { Routes } from './src/routes';
 
 
 
@@ -46,7 +47,7 @@ export default function App() {
   return (
     <View onLayout={onLayoutRootView} style={{flex: 1}}>
       <ThemeProvider theme={theme}>
-        <Home />
+        <Routes/>
       </ThemeProvider>
     </View>
   );
